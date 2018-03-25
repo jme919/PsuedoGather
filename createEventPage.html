@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+    <title>GatheRVA: Create Own Event</title>
+</head>
+<body>
+    <!-- logo -->
+    <div class="container-fluid align-items-center justify-content-center">
+        <div class="row m-3 justify-content-center">
+            <div class="col-3">
+                <img src="assets/images/ourlogo.png" alt="logo" id ="logo">
+            </div>
+        </div>
+    </div>
+    <!-- navbar -->
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg" id="header">
+            <div class="navbar-nav m-auto">
+                <i class="fas fa-home"></i>
+                <a class="nav-item nav-link ml-3 mr-3 pl-3 pr-3" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link ml-3 mr-3 pl-3 pr-3" href="activePage.html">Be Active</a>
+                <a class="nav-item nav-link ml-3 mr-3 pl-3 pr-3" href="musicPage.html">Music</a>
+                <a class="nav-item nav-link ml-3 mr-3 pl-3 pr-3" href="foodPage.html">Food/Beverage</a>
+                <a class="nav-item nav-link ml-3 mr-3 pl-3 pr-3" href="createEventPage.html">Create Own Event</a>
+            </div>
+        </nav>
+    </div>
+    <div class="container-fluid">
+        <div class="col-xl-2 col-l-3 col-md-3 m-3 p-3" id="myForm">
+            <form>
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="validationDefault01">Event Title</label>
+                        <input type="text" class="form-control" placeholder="Event Title"      
+                        id="event-name-input" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="validationDefault02">Date of Event</label>
+                        <input type="date" class="form-control"  placeholder="mm/dd/yyyy" id="date-input" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="categories">Category</label>
+                        
+                        <select class="custom-select" id="cat" required>
+                            <option selected>Choose...</option>
+                            <option value="Food">Food</option>
+                            <option value="Music">Music</option>
+                            <option value="Active">Be Active</option>
+                        
+                        </select>
+                        
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        
+                        <label for="inputEmail3">Email</label>
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="exampleFormControlTextarea1">Event Details<br>(Start Time&Location)</label>
+                        <textarea class="form-control" id="details-input" rows="3" required></textarea>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="exampleFormControlFile1" >Event Image</label>
+                        <progress value="0" max="100" id="uploader">0%</progress>
+                        <input type="file"  class="form-control-file" value="upload" id="fileButton" required>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit" id="add-event-btn">Submit form</button>
+            </form>
+        </div>
+    </div>
+
+    <!--<div class="container">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <progress value="0" max="100" id="uploader">0%</progress>
+                <input type="file" value="upload" id="fileButton">
+            </div>    
+        </div>    
+    </div>-->    
+    <div class="container">
+        <div class="row" id="createPageInfo">
+            <!-- event cards holder -->
+        </div>
+    </div>
+
+
+    
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="" src="assets/javascript/app.js"></script>
+</body>
+</html>
